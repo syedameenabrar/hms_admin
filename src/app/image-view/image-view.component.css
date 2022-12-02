@@ -1,0 +1,50 @@
+
+
+.btn{
+  width: 50px;
+}
+
+.inputSelect{
+  width: fit-content;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.showImg{
+  width: 150px; 
+  height: 150px;
+  margin: 4px;
+}
+
+.headerBtns{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+ 
+}
+
+.gridList{
+  display: flex;
+  margin: 42px;
+}
+
+@media (max-width:578px) {
+  .cardss{
+    margin: auto;
+  }
+  .showImg{
+    width: 120px;
+     height: 120px;
+     margin: 8px;
+  }
+}
+
+.scrooltable{
+  overflow-x: auto;
+}
+
+.disabledColor{
+  cursor: none;
+  pointer-events: none;
+}

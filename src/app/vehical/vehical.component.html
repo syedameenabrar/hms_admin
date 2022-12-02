@@ -1,0 +1,72 @@
+<ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+<div class="toolbar" role="banner">
+    <img
+      width="90"
+      alt="Angular Logo"
+      src="../../assets/images/hms-logo.png"
+    />
+    <span>HMS LOGISTICS</span>
+    
+  </div>
+  
+  <div class="content" role="main">
+  
+    
+      <!-- Highlight Card -->
+    
+   
+  
+   
+  
+
+  
+  
+  
+    <h4>Create New Vehical No</h4>
+    <!-- Resources -->
+
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Enter Vechical No</label>
+          <input [(ngModel)]="vehicleNumber" name="vehicleNumber" type="email" class="form-control vNum" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="KA O1 AA 12345">
+          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+        </div>
+        
+        
+        <button (click)="addVehicle()" type="submit" class="btn btn-primary">Create Vechical No</button>
+      </form>
+    </div>
+
+
+    <h1>All vehicles List</h1>
+    <table>
+      <tr>
+        <th>Sl No</th>
+        <th>Vehicle No</th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let vehicles of allVehicles;let i = index">
+        <td>{{i+1}}</td>
+        <td>{{vehicles.vehicleNumber}}</td>
+        <td (click)="deletevehicles(vehicles._id)"><button class="btn btn-danger">Delete</button></td>
+      </tr>
+    
+    </table>
+
+    
+
+
+
+
+
+
+
+

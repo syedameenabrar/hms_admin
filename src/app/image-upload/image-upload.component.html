@@ -1,0 +1,120 @@
+<ng-container *ngIf="imageBg else otherContent">
+<div [class.abc]="imageBg"></div>
+</ng-container>
+
+<ng-template #otherContent>
+  
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="90"
+    alt="Angular Logo"
+    src="../../assets/images/hms-logo.png"
+  />
+  <span>HMS LOGISTICS</span>
+    <!-- <div class="spacer"></div>
+    <a aria-label="Angular on twitter" target="_blank" rel="noopener" href="https://twitter.com/angular" title="Twitter">
+      <svg id="twitter-logo" height="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+        <rect width="400" height="400" fill="none"/>
+        <path d="M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23" fill="#fff"/>
+      </svg>
+    </a>
+    <a aria-label="Angular on YouTube" target="_blank" rel="noopener" href="https://youtube.com/angular" title="YouTube">
+      <svg id="youtube-logo" height="24" width="24" data-name="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff">
+        <path d="M0 0h24v24H0V0z" fill="none"/>
+        <path d="M21.58 7.19c-.23-.86-.91-1.54-1.77-1.77C18.25 5 12 5 12 5s-6.25 0-7.81.42c-.86.23-1.54.91-1.77 1.77C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.91 1.54 1.77 1.77C5.75 19 12 19 12 19s6.25 0 7.81-.42c.86-.23 1.54-.91 1.77-1.77C22 15.25 22 12 22 12s0-3.25-.42-4.81zM10 15V9l5.2 3-5.2 3z"/>
+      </svg>
+    </a> -->
+</div>
+
+<div class="content" role="main">
+
+  <div *ngIf="uploadPart">
+    <!-- Highlight Card -->
+  <div class="card highlight-card card-small">
+
+    <svg id="rocket" xmlns="http://www.w3.org/2000/svg" width="101.678" height="101.678" viewBox="0 0 101.678 101.678">
+      <title>Rocket Ship</title>
+      <g id="Group_83" data-name="Group 83" transform="translate(-141 -696)">
+        <circle id="Ellipse_8" data-name="Ellipse 8" cx="50.839" cy="50.839" r="50.839" transform="translate(141 696)" fill="#dd0031"/>
+        <g id="Group_47" data-name="Group 47" transform="translate(165.185 720.185)">
+          <path id="Path_33" data-name="Path 33" d="M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z" transform="translate(0.371 3.363)" fill="#fff"/>
+          <path id="Path_34" data-name="Path 34" d="M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z" transform="translate(0 0.005)" fill="#fff"/>
+        </g>
+      </g>
+    </svg>
+
+    <span>DELIVERING HAPPINESS</span>
+
+    <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
+      <title>Rocket Ship Smoke</title>
+      <path id="Path_40" data-name="Path 40" d="M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z" transform="translate(-147.025 -140.939)" fill="#f5f5f5"/>
+    </svg>
+
+  </div>
+ 
+
+ 
+
+<form [formGroup]="uploadDetails" (ngSubmit)="submitForm()">
+<div class="center">
+  <input type="file" formControlName="image" #test  [ngStyle]="{'display': 'none'}" (change)="inputImg($event)" accept="image/*" capture="environment">
+  
+  <img class="imgUpload" *ngIf="uploadImage" [src]="uploadImage" alt="">
+  <img class="imgUpload" *ngIf="!uploadImage"src="data:image/jpeg;base64,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" alt="">
+ 
+  <!-- <h4 class="empty" *ngIf="!uploadImage">Empty</h4> -->
+  <input  formControlName="LrNo" class="inputSelect" type="text" placeholder="Enter LR no" name="" id="">
+  <select  formControlName="vehicleNo" class="inputSelect" name="" id="">
+    <option value="null" selected disabled>Select Vehical NO</option>
+    <option value="KA-01-KJ-1234">KA-01-KJ-1234</option>
+    <option value="KA-01-KJ-1234">KA-04-PO-5632</option>
+    <option value="KA-01-KJ-1234">KA-05-ML-7896</option>
+    <option value="KA-01-KJ-1234">KA-53-DE-3251</option>
+  </select>
+  <select  formControlName="Route" class="inputSelect" name="" id="">
+    <option value="null" selected disabled>Select Route</option>
+    <option value="Bang-to-Mysore">Bang-to-Mysore</option>
+    <option value="Mysore-to-Bang">Mysore-to-Bang</option>
+  </select>
+  
+
+</div>
+
+
+
+<div class="uploadBtns">
+  
+  <button type="button" class="btn btn-primary"  (click)="test.click()">Add Image</button>
+
+<button type="submit" [disabled]="!uploadDetails.valid" class="btn btn-success">Upload</button>
+<!-- <button type="submit" [disabled]="!uploadImage" class="btn btn-success" (click)="uploadImg()">Upload</button> -->
+</div>
+</form>
+</div>
+
+
+
+<div *ngIf="getPart">
+  <h1 style="display: flex; justify-content: center;">LR</h1>
+<!-- 
+  <div *ngFor="let abc of arr" class="arrImg">
+
+    <img src="{{abc}}" alt="" style="width: 150px; height: 150px;margin: 20px;">
+  </div> -->
+
+  <div *ngFor="let ser of getImgsSer" class="arrImg">
+
+    <img src="{{ser.image}}" alt="" style="width: 150px; height: 150px;margin: 20px;">
+  </div>
+  <br><br>
+
+  <button  class="btn btn-danger backBtn"  (click)="back()">Back</button>
+</div>
+  <!-- Resources -->
+  </div>
+ 
+
+
+</ng-template>

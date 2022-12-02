@@ -1,0 +1,35 @@
+/* form{
+    margin-top: 20%;
+} */
+
+label{
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.toolbar {
+    width: 163% !important;
+}
+
+button{
+    margin-top: 13px;
+    width: 100%;
+}
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }

@@ -1,0 +1,100 @@
+
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="ball-scale-multiple"
+>
+<p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner>
+
+<div class="toolbar" role="banner">
+    <img
+      width="90"
+      alt="Angular Logo"
+      src="../../assets/images/hms-logo.png"
+    />
+    <span>HMS LOGISTICS</span>
+    
+  </div>
+  
+  <div class="content" role="main"> 
+ 
+
+        <!-- <h4>Track Vehicle Location</h4>
+        <h3>Total Count LocoNav : {{count}}</h3>
+       <div class="profit__item__wrapper">
+        <div class="row">
+            <div class="col-md-12" *ngFor="let track of dataTrack; let i = index">
+                <div class="profit__single__item alt shadow__effect">
+                    
+                    <div class="item__content">
+                        <h1>{{i+1}} : {{track.data.vehicle_number}}</h1>
+                        <p>ignition : {{track.data.ignition}}</p>
+                        <p>speed : {{track.data.speed}}</p>
+                        <button (click)="showMap(track.data.share_link)" class="btn btn-success">Show Map</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div> -->
+
+        <h4>Track Vehicles Location</h4>
+        <h3>Total Count : {{globalCount}} + {{count}} = {{tCount}}</h3>
+        <h5>Global</h5>
+        <p>*Refresh to get latest data <button (click)="refreshApi()" class="btn btn-primary m-1">Refresh</button> </p>
+       <div class="profit__item__wrapper">
+        <div class="row">
+          <div class="col-md-12" *ngFor="let gTrack of globalTrack; let i = index">
+            <div class="profit__single__item alt shadow__effect">
+                
+                <div class="item__content">
+                    <h1>{{i+1}} : {{gTrack.vehicleNo}}</h1>
+                    <p>Ignition : {{gTrack.ignition}}</p>
+                    <p>Speed : {{gTrack.speed}}</p>
+                    <p>Address : {{gTrack.address}}</p>
+                    <p>Track_Date_time : {{gTrack.trackDatetime}}</p>
+                    <button (click)="longitude(gTrack.latitude,gTrack.longitude)" class="btn btn-success sMap">Show Map</button>
+                </div>
+            </div>
+        </div>
+            
+            
+        </div>
+    </div>
+
+     <h5>LocoNav</h5>
+        <!-- <h3>Total Count LocoNav : {{count}}</h3> -->
+       <div class="profit__item__wrapper">
+        <div class="row">
+            <div class="col-md-12" *ngFor="let track of dataTrack; let i = index">
+                <div class="profit__single__item alt shadow__effect">
+                    
+                    <div class="item__content">
+                        <h1>{{globalCount + i+1}} : {{track.data.vehicle_number}}</h1>
+                        <p>ignition : {{track.data.ignition}}</p>
+                        <p>speed : {{track.data.speed}}</p>
+                        <button (click)="showMap(track.data.share_link)" class="btn btn-success sMap">Show Map</button>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+ 
+    
+    </div>
+
+
+
+
+
+
+
+
+
+

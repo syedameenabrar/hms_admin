@@ -1,0 +1,25 @@
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="#fff"
+type="ball-scale-multiple"
+>
+<p style="font-size: 20px; color: white"></p>
+</ngx-spinner>
+
+<body>
+    <section class='login' id='login'>
+        <div class='head'>
+        <h1 class='company'>HMS Admin</h1>
+        </div>
+        <p class='msg'>Welcome back</p>
+        <div class='form'>
+          <form>
+        <input [(ngModel)]="email" type="text" placeholder='Email' name="email" class='text mt-4' id='username' required><br>
+        <input [(ngModel)]="pass" type="text" name="pass" placeholder='Password' class='text mt-4 mb-5'><br>
+        <a (click)="onLogin()" class='btn-login' id='do-login'>Login</a>
+        <a routerLink="/register" class='forgot'>Forgot?</a>
+          </form>
+        </div>
+      </section>
+</body>

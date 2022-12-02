@@ -1,0 +1,51 @@
+
+
+  <div class="content" role="main">
+    <h5>Total LR : {{getImgsSer.length}}</h5>
+    <input class="inputSelect" type="text" [(ngModel)]="term" placeholder="Search Here...">
+    </div>
+<ng-container>
+  <table class="table table-striped scrooltable">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Uploaded(M/D/Y)</th>
+        <th scope="col">Driver</th>
+        <th scope="col">LR no</th>
+        <th scope="col">Vehicle</th>
+        <th scope="col">Route</th>
+        <th scope="col">In-Transist</th>
+        <th scope="col">Bosch In-Transist</th>
+        <th scope="col">In-Transist Image</th>
+        <th scope="col">Delivered</th>
+        <th scope="col">Bosch Delivered</th>
+        <th scope="col">Delivered Image</th>
+        <th scope="col">ePoD</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ser of getImgsSer  |filter:term; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{ser?.createdAt | date:'short'}}</td>
+        <td>{{ser?.driverName}}</td>
+        <td>{{ser?.lrNumber}}</td>
+        <td>{{ser?.vehicleNumber?.vehicleNumber}}</td>
+        <td>{{ser?.route?.address}}</td>
+        <td><input class="disabledColor" type="checkbox" name="" id="" [checked]="ser?.shipmentInTransit"></td>
+        <td><input class="disabledColor" type="checkbox" name="" id="" [checked]="ser?.boschInTransit"></td>
+        <td><a target="_blank" href="{{ser?.transitPicture}}" download>
+          <img src="{{ser?.transitPicture}}" alt="" style="width: 50px; height: 50px;">
+        </a></td>
+        <td><input class="disabledColor" type="checkbox" name="" id="" [checked]="ser?.shipmentDelivered"></td>
+        <td><input class="disabledColor" type="checkbox" name="" id="" [checked]="ser?.boschDelivered"></td>
+        <td><a target="_blank" href="{{ser?.deliveredPicture}}" download>
+          <img src="{{ser?.deliveredPicture}}" alt="" style="width: 50px; height: 50px;">
+        </a></td>
+        <td><input class="disabledColor" type="checkbox" name="" id="" [checked]="ser?.ePoDUploaded"></td>
+        <td><button (click)="deleteLr(ser._id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-container>
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "timer" [fullScreen] = "false"><p style="color: white" > Loading... </p></ngx-spinner>
